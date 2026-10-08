@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Checklist Sekom RKK</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--tx:#1b2430;--mut:#667085;--ac:#0b5cab;--ok:#1a9a5b;--bd:#e2e6ec;--bg2:#e8f0fa;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151c;--card:#1a212b;--tx:#e8ecf2;--mut:#98a2b3;--ac:#5aa7f0;--ok:#3ccf8e;--bd:#2b3441;--bg2:#1f2d40}}
+:root[data-theme="dark"]{--bg:#10151c;--card:#1a212b;--tx:#e8ecf2;--mut:#98a2b3;--ac:#5aa7f0;--ok:#3ccf8e;--bd:#2b3441;--bg2:#1f2d40}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.4}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 16px 10px;z-index:5;border-bottom:1px solid var(--bd)}
+h1{font-size:18px;margin:0 0 8px}
+.bar{height:8px;background:var(--bd);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mut);margin-top:6px}
+button.r{background:none;border:1px solid var(--bd);color:var(--mut);border-radius:8px;padding:4px 10px;font-size:12px}
+main{padding:8px 12px 40px;max-width:640px;margin:0 auto}
+h2{font-size:14px;color:var(--ac);margin:20px 4px 8px;display:flex;justify-content:space-between;gap:8px}
+h2 span{color:var(--mut);font-weight:400;white-space:nowrap}
+label{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:8px}
+input{appearance:none;-webkit-appearance:none;flex:none;width:24px;height:24px;border:2px solid var(--mut);border-radius:7px;margin:1px 0 0;position:relative}
+input:checked{background:var(--ok);border-color:var(--ok)}
+input:checked::after{content:"";position:absolute;left:7px;top:2px;width:6px;height:12px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.t{font-size:15px;flex:1}
+.w{display:inline-block;background:var(--bg2);color:var(--ac);font-size:11px;font-weight:600;border-radius:99px;padding:2px 9px;margin-bottom:5px}
+.n{font-weight:600;color:var(--mut);margin-right:4px}
+label:has(input:checked) .t{color:var(--mut);text-decoration:line-through}
+ul{margin:6px 0 0;padding-left:18px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<header>
+<h1>Checklist Sekom — Pelaksanaan RKK</h1>
+<div class="bar"><i id="pb"></i></div>
+<div class="meta"><span id="pt"></span><button class="r" id="rs">Reset</button></div>
+</header>
+<main id="m"></main>
+<script>
+var D=[
+["A. Pendaftaran RKK",[
+[1,"Mengingatkan kepada semua pengelola untuk mendaftarkan Debitur yang akan RKK pada minggu berikutnya paling lambat Kamis jam 14:00","Kamis pkl 08:00"],
+[2,"Memeriksa di zibar apakah ada debitur yang belum diapprove oleh L3 s.d pkl 14:00","Kamis pkl 08:00"],
+[3,"Menginformasikan kepada L3 untuk approved di Zibar.","Kamis pkl 08:00"],
+[4,"Mengisi checklist pendaftaran RKK sesuai data di Zibar. Termasuk posisi pending atas semua dokumen untuk setiap debitur terdaftar.","Kamis pkl 08:00"],
+[5,"Mengkonfirmasi kepada pengelola apakah sudah dilakukan reccomending sebelum RKK","Kamis pkl 08:00"],
+[6,"Mengkonfirmasi kepada pengelola sindikasi apakah ada debitur terdaftar yang merupakan sindikasi.","Kamis pkl 08:00"],
+[7,"Laporkan table checklist pendaftaran ke WAG Koordinasi GH setiap Jumat pagi.","Jumat pkl 09:00"],
+[8,"Buat list debitur yang menjadi prioritas untuk segera dijadwalkan RKK berdasarkan:","Jumat pkl 09:00",["1. Materi ready (sudah terdaftar pada minggu sebelumnya)","2. Jatuh tempo","3. Arahan manajemen","4. Kewenangan A1"],"Disampaikan kepada CT, EA Pak Rizaldi dan EA Bu Eny"],
+[9,"Laporkan table checklist pendaftaran ke EA Pak Rizaldi untuk meminta arahan pemutus BU","Jumat pkl 09:00"],
+[10,"Laporkan table checklist pendaftaran ke EA Bu Eny untuk meminta jadwal RKK untuk debitur yang diputus Bu Eny","Jumat pkl 09:00"],
+[11,"Minta jadwal Pak Erwin ke sekretaris untuk debitur yang diputus Pak Erwin","Jumat pkl 09:00"],
+[12,"Minta jadwal untuk RKK Bu Nina ke sekretaris untuk disampaikan ke CT.","Jumat pkl 09:00"]]],
+["B. Penjadwalan RKK",[
+[13,"Menjadwalkan RKK untuk kewenangan A2 dengan pemutus BU Pak Erwin dan PKMK A di link agenda Direksi","Jumat pkl 18:00"],
+[14,"Mengkonfirmasikan kepada sekretaris Pak Erwin dan Sekom PKMK A untuk jadwal RKK yang sudah dapat terjadwal","Jumat pkl 19:00"],
+[15,"EA Pak Rizaldi dan EA Bu Eny akan menyampaikan jadwal RKK pemutus BU","Jumat pkl 19:00"],
+[16,"CT akan menyampaikan jadwal RKK pemutus Risk 1 kepada semua sekom segmen.","Jumat pkl 20:00"],
+[17,"Setelah tersusun rencana RKK, disampaikan kembali ke sekom PKMK A, sekretaris atau EA pemutus BU untuk memastikan jadwal telah kuorum","Jumat pkl 21:00"],
+[18,"Setelah Kuorum, sampaikan kepada CT untuk permohonan ruang RKK lt 28 MM 2","Jumat pkl 21:00"],
+[19,"Daftar ke form ruang RKK Lt 28","Jumat pkl 21:00"],
+[20,"Update agenda RKK sesuai rencana RKK yang sudah kuorum","Jumat pkl 21:00"],
+[21,"Mengajukan pemesanan konsumsi kepada MCO, dengan menyebutkan:","Jumat pkl 22:00",["Preferensi makanan dan minuman Pemutus","URC dan Group Business Unit","Ruang pelaksanaan RKK","Waktu pelaksanaan RKK","Jumlah peserta RKK"]],
+[22,"Melakukan pemesanan nasi box apabila RKK dilaksanakan sebelum atau setelah jam makan siang/makan malam.","Jumat pkl 22:00"],
+[23,"CT mengirimkan release agenda RKK dan daftar debitur terdaftar ke WAG Sekom. Kemudian Sekom memeriksa:","Sabtu pkl 09:00",["Rencana RKK (Tanggal dan lokasi RKK, debitur, pengelola, permohonan, dan pemutus)","Debitur materi ready, materi masih dipersiapkan, susulan, drop dan reschedule"]]]],
+["C. Persiapan H-2 RKK",[
+[23,"Menyampaikan materi RKK kepada Pemutus dan seluruh stakeholder paling lambat H-2 sebelum pelaksanaan RKK.","H-2"],
+[24,"Memastikan PPT dan NAK pada poin 23 telah sesuai dengan materi yang akan ditampilkan pada saat RKK.","H-2"],
+[25,"Menyampaikan summary debitur kepada Pemutus, Sekretaris, dan/atau EA paling lambat H-1 sebelum pelaksanaan RKK.","H-1"],
+[26,"Menyampaikan jadwal RKK kepada Compliance dan Legal paling lambat H-1 sebelum pelaksanaan RKK.","H-1"],
+[27,"Memeriksa draft risalah dan daftar hadir sebelum pelaksanaan RKK.","H-1"],
+[28,"Memastikan seluruh laptop Sekom telah ter-setting ke printer lantai 28 dan terhubung dengan Wi-Fi.","H-1"]]],
+["D. Persiapan 60 Menit Sebelum RKK",[
+[29,"Mengingatkan seluruh Pemutus mengenai lokasi dan waktu pelaksanaan RKK paling lambat 60 menit sebelum RKK dimulai serta memastikan Pemutus hadir tepat waktu.","Hari H"],
+[30,"Memastikan EA dan/atau Sekretaris menyampaikan informasi kepada Sekom/Pengelola Risk apabila Pemutus tidak dapat hadir tepat waktu atau berhalangan hadir.","Hari H"],
+[31,"Memeriksa kesiapan infrastruktur RKK, meliputi:","Hari H",["Kursi pemutus di Ruang RKK","AC","Pointer","Audio dan video","Microsoft Teams (khusus hybrid)","Konsumsi"]],
+[32,"Memastikan seluruh perlengkapan RKK tersedia, meliputi:","Hari H",["Pointer sebanyak 5 pcs","Ballpoint warna hitam dan biru","Flip chart","Kertas A4","Roll kabel"]],
+[33,"Memastikan snack box dan minuman telah sesuai dengan preferensi Pemutus.","Hari H"],
+[34,"Memastikan makanan dan minuman untuk Pemutus disajikan dengan piring dan utensil yang sesuai.","Hari H"],
+[35,"Untuk minuman hot, memastikan minuman disajikan dalam kondisi masih hangat dan maksimal 5 menit setelah Pemutus hadir.","Hari H"],
+[36,"Memasang signage “Sedang RKK” pada pintu apabila RKK dilaksanakan di ruang kerja Pengelola, selain ruang khusus RKK Lantai 28 MM 1","Hari H"],
+[37,"Memastikan seluruh device dan handphone dalam kondisi silent/vibrate mode.","Hari H"]]],
+["E. Selama Pelaksanaan RKK",[
+[38,"Memastikan pelaksanaan RKK berlangsung tertib, lancar, dan sesuai dengan agenda yang telah ditetapkan, dengan menjaga kondisi ruang RKK tetap kondusif, bebas dari gangguan suara (noise), serta memastikan tidak terdapat pihak yang tidak berkepentingan memasuki ruang RKK.","Hari H"]]],
+["F. Penanganan Konsumsi Setelah RKK",[
+[39,"Apabila RKK berlangsung sebelum atau setelah jam makan sebagaimana dimaksud pada poin 6, 10 menit sebelum RKK berakhir, melakukan konfirmasi kepada EA apakah Pemutus akan makan di ruang RKK atau langsung meninggalkan ruang RKK.","Hari H"],
+[40,"Apabila Pemutus akan makan di ruang RKK, menghubungi Pantry Lantai 28 untuk mempersiapkan makanan dan minuman bagi Pemutus dan peserta.","Hari H"],
+[41,"Apabila Pemutus langsung meninggalkan ruang RKK, menghubungi Pramubakti Unit Pengelola untuk mengantarkan nasi box ke ruang kerja Pemutus.","Hari H"]]],
+["G. Setelah RKK Selesai",[
+[42,"Menghubungi Pramubakti Lantai 28 setelah RKK selesai untuk segera melakukan pembersihan ruang.","Hari H"],
+[43,"Memastikan seluruh perlengkapan RKK sebagaimana dimaksud pada poin 32 telah lengkap dan disimpan kembali di Unit Kerja Sekom","Hari H"]]]
+];
+var K="rkk-sekom-v2",S={};
+try{S=JSON.parse(localStorage.getItem(K)||"{}")}catch(e){S={}}
+function save(){try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}}
+var m=document.getElementById("m"),idx=0,tot=0,secs=[];
+D.forEach(function(s){
+ var h=document.createElement("h2");h.innerHTML="<b>"+s[0]+"</b><span></span>";m.appendChild(h);
+ var sec={h:h,cbs:[]};secs.push(sec);
+ s[1].forEach(function(it){
+  idx++;tot++;var id=idx,l=document.createElement("label");
+  var cb=document.createElement("input");cb.type="checkbox";cb.checked=!!S[id];
+  cb.onchange=function(){S[id]=cb.checked;save();upd()};
+  var d=document.createElement("div");d.className="t";
+  d.innerHTML='<span class="w">'+it[2]+'</span><br><span class="n">'+it[0]+'.</span>'+it[1]+(it[3]?"<ul>"+it[3].map(function(x){return"<li>"+x+"</li>"}).join("")+"</ul>":"")+(it[4]?'<div style="margin-top:6px;font-size:13px;color:var(--mut)">'+it[4]+"</div>":"");
+  l.appendChild(cb);l.appendChild(d);m.appendChild(l);sec.cbs.push(cb);
+ });
+});
+function upd(){
+ var c=0;secs.forEach(function(s){var k=0;s.cbs.forEach(function(b){if(b.checked)k++});c+=k;s.h.lastChild.textContent=k+"/"+s.cbs.length});
+ document.getElementById("pb").style.width=(c/tot*100)+"%";
+ document.getElementById("pt").textContent=c+" dari "+tot+" selesai"+(c==tot?" ✓":"");
+}
+document.getElementById("rs").onclick=function(){
+ if(!confirm("Reset semua centang?"))return;
+ S={};save();secs.forEach(function(s){s.cbs.forEach(function(b){b.checked=false})});upd();
+};
+upd();
+</script>
+</body>
+</html>
